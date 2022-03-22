@@ -11,17 +11,12 @@ const {
 
 const router = express.Router();
 
-// expanding from server.js
-router
-    .route("/")
-    .get(getBootcamps)
-    .post(createBootcamp);
+router.route("/").get(getBootcamps).post(createBootcamp);
 
 router
-    .route('/:id')
-    .get(getBootcamp)
-    .put(updateBootcamp)
-    .delete(deleteBootcamp);
-
+  .route("/:id")
+  .get(getBootcamp)
+  .put(updateBootcamp)
+  .delete(deleteBootcamp);
 
 module.exports = router;

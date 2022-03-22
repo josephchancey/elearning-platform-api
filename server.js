@@ -1,6 +1,7 @@
 // Declare dependencies
 const express = require('express');
 const dotenv = require('dotenv');
+const logger = require('./middleware/logger');
 
 // Route files
 const bootcamps = require('./routes/bootcamps');
@@ -10,6 +11,9 @@ dotenv.config({ path: './config/config.env' });
 
 // Initialize express as app variable 
 const app = express();
+
+// Call our middleware logger
+app.use(logger);
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
