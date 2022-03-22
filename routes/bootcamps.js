@@ -11,6 +11,7 @@ const {
 
 const router = express.Router();
 
+// expanding from server.js
 router
     .route("/")
     .get(getBootcamps)
